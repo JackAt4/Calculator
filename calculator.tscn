@@ -1,0 +1,346 @@
+[gd_scene load_steps=12 format=3 uid="uid://bewpulbhhw6w0"]
+
+[ext_resource type="Texture2D" uid="uid://cgcbkgskoeqef" path="res://assets/Negate_btn.png" id="1_hv2oc"]
+[ext_resource type="Texture2D" uid="uid://d4i8rel60pnve" path="res://assets/Delete_btn.png" id="2_qoncu"]
+[ext_resource type="Texture2D" uid="uid://osiumj3jwrst" path="res://assets/Division_btn.png" id="3_qhhw0"]
+[ext_resource type="Texture2D" uid="uid://ddf6ql2qkx58j" path="res://assets/Multiplication_btn.png" id="4_431rg"]
+[ext_resource type="Texture2D" uid="uid://sfq4e4vof4k5" path="res://assets/Subtraction_btn.png" id="5_33wm1"]
+[ext_resource type="Texture2D" uid="uid://ddpl8xlqm7xnm" path="res://assets/Addition_btn.png" id="6_rj4s4"]
+[ext_resource type="Texture2D" uid="uid://da43t2bc11g13" path="res://assets/Equal_btn.png" id="7_lesd3"]
+[ext_resource type="StyleBox" uid="uid://doqia5df57utg" path="res://normal_equal_style.tres" id="7_nuafx"]
+
+[sub_resource type="SystemFont" id="SystemFont_3pb50"]
+font_names = PackedStringArray("Tahoma")
+
+[sub_resource type="SystemFont" id="SystemFont_ee6bf"]
+font_names = PackedStringArray("Tahoma")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsw5g"]
+bg_color = Color(0.101961, 0.101961, 0.101961, 1)
+
+[node name="Calculator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Screen" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -600.0
+offset_right = 332.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AllComponentsContainer" type="VBoxContainer" parent="Screen/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DisplayContainer" type="VBoxContainer" parent="Screen/ColorRect/AllComponentsContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Screen/ColorRect/AllComponentsContainer/DisplayContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/ColorRect/AllComponentsContainer/DisplayContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="PrevWorkArea" type="Label" parent="Screen/ColorRect/AllComponentsContainer/DisplayContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.662745, 0.662745, 0.662745, 1)
+theme_override_fonts/font = SubResource("SystemFont_3pb50")
+theme_override_font_sizes/font_size = 30
+text = "8 x 10"
+horizontal_alignment = 2
+
+[node name="WorkArea" type="Label" parent="Screen/ColorRect/AllComponentsContainer/DisplayContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_3pb50")
+theme_override_font_sizes/font_size = 90
+text = "80"
+horizontal_alignment = 2
+
+[node name="AllButtons" type="VBoxContainer" parent="Screen/ColorRect/AllComponentsContainer"]
+layout_mode = 2
+
+[node name="TopButtons" type="GridContainer" parent="Screen/ColorRect/AllComponentsContainer/AllButtons"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 4
+
+[node name="Clear_btn" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.662745, 0.662745, 0.662745, 1)
+theme_override_fonts/font = SubResource("SystemFont_ee6bf")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_xsw5g")
+text = "C"
+
+[node name="Negate_btn" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xsw5g")
+
+[node name="TextureRect" type="TextureRect" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons/Negate_btn"]
+modulate = Color(0.662745, 0.662745, 0.662745, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hv2oc")
+stretch_mode = 5
+
+[node name="Delete_btn" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xsw5g")
+
+[node name="TextureRect" type="TextureRect" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons/Delete_btn"]
+modulate = Color(0.662745, 0.662745, 0.662745, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qoncu")
+stretch_mode = 5
+
+[node name="Division_btn" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xsw5g")
+
+[node name="TextureRect" type="TextureRect" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons/Division_btn"]
+modulate = Color(0.662745, 0.662745, 0.662745, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_qhhw0")
+stretch_mode = 5
+
+[node name="7" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.662745, 0.662745, 0.662745, 1)
+theme_override_fonts/font = SubResource("SystemFont_ee6bf")
+theme_override_font_sizes/font_size = 45
+text = "7"
+
+[node name="8" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.662745, 0.662745, 0.662745, 1)
+theme_override_fonts/font = SubResource("SystemFont_ee6bf")
+theme_override_font_sizes/font_size = 45
+text = "8"
+
+[node name="9" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.662745, 0.662745, 0.662745, 1)
+theme_override_fonts/font = SubResource("SystemFont_ee6bf")
+theme_override_font_sizes/font_size = 45
+text = "9"
+
+[node name="Multiplication_btn" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xsw5g")
+
+[node name="TextureRect" type="TextureRect" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons/Multiplication_btn"]
+modulate = Color(0.662745, 0.662745, 0.662745, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_431rg")
+stretch_mode = 5
+
+[node name="4" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.662745, 0.662745, 0.662745, 1)
+theme_override_fonts/font = SubResource("SystemFont_ee6bf")
+theme_override_font_sizes/font_size = 45
+text = "4"
+
+[node name="5" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.662745, 0.662745, 0.662745, 1)
+theme_override_fonts/font = SubResource("SystemFont_ee6bf")
+theme_override_font_sizes/font_size = 45
+text = "5"
+
+[node name="6" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.662745, 0.662745, 0.662745, 1)
+theme_override_fonts/font = SubResource("SystemFont_ee6bf")
+theme_override_font_sizes/font_size = 45
+text = "6"
+
+[node name="Subtraction_btn" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xsw5g")
+
+[node name="TextureRect" type="TextureRect" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons/Subtraction_btn"]
+modulate = Color(0.662745, 0.662745, 0.662745, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_33wm1")
+stretch_mode = 5
+
+[node name="1" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.662745, 0.662745, 0.662745, 1)
+theme_override_fonts/font = SubResource("SystemFont_ee6bf")
+theme_override_font_sizes/font_size = 45
+text = "1"
+
+[node name="2" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.662745, 0.662745, 0.662745, 1)
+theme_override_fonts/font = SubResource("SystemFont_ee6bf")
+theme_override_font_sizes/font_size = 45
+text = "2"
+
+[node name="3" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.662745, 0.662745, 0.662745, 1)
+theme_override_fonts/font = SubResource("SystemFont_ee6bf")
+theme_override_font_sizes/font_size = 45
+text = "3"
+
+[node name="Addition_btn" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_xsw5g")
+
+[node name="TextureRect" type="TextureRect" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/TopButtons/Addition_btn"]
+modulate = Color(0.662745, 0.662745, 0.662745, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_rj4s4")
+stretch_mode = 5
+
+[node name="BottomButtons" type="HBoxContainer" parent="Screen/ColorRect/AllComponentsContainer/AllButtons"]
+layout_mode = 2
+
+[node name="0" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/BottomButtons"]
+custom_minimum_size = Vector2(330, 161)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.662745, 0.662745, 0.662745, 1)
+theme_override_fonts/font = SubResource("SystemFont_ee6bf")
+theme_override_font_sizes/font_size = 45
+text = "0"
+
+[node name="Decimal_btn" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/BottomButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.662745, 0.662745, 0.662745, 1)
+theme_override_fonts/font = SubResource("SystemFont_ee6bf")
+theme_override_font_sizes/font_size = 45
+text = "."
+
+[node name="Equal_btn" type="Button" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/BottomButtons"]
+custom_minimum_size = Vector2(161, 161)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("7_nuafx")
+
+[node name="TextureRect" type="TextureRect" parent="Screen/ColorRect/AllComponentsContainer/AllButtons/BottomButtons/Equal_btn"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_lesd3")
+stretch_mode = 5

@@ -11,5 +11,17 @@ config_version=5
 [application]
 
 config/name="Calculator"
+run/main_scene="res://calculator.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=2304
+window/size/viewport_height=1296
+window/size/window_width_override=2304
+window/size/window_height_override=1296
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
