@@ -1,8 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1701103096
+::res://::1701189106
+calculator.tscn::PackedScene::2713539419234100161::1701105287::0::1::::<><>::uid://cgcbkgskoeqef::::res://assets/Negate_btn.png<>uid://d4i8rel60pnve::::res://assets/Delete_btn.png<>uid://osiumj3jwrst::::res://assets/Division_btn.png<>uid://ddf6ql2qkx58j::::res://assets/Multiplication_btn.png<>uid://sfq4e4vof4k5::::res://assets/Subtraction_btn.png<>uid://ddpl8xlqm7xnm::::res://assets/Addition_btn.png<>uid://da43t2bc11g13::::res://assets/Equal_btn.png<>uid://doqia5df57utg::::res://normal_equal_style.tres
 icon.svg::CompressedTexture2D::2373434254161360054::1701102855::1701102861::1::::<><>::
+normal_equal_style.tres::StyleBoxFlat::8175423222622310940::1701105287::0::1::::<><>::
 README.md::TextFile::-1::1701102990::0::1::::<><>::
-::res://assets/::1701103104
+::res://assets/::1701103108
 Addition_btn.png::CompressedTexture2D::7401522292197779106::1701103080::1701103108::1::::<><>::
 Delete_btn.png::CompressedTexture2D::9213287786401158058::1701103080::1701103108::1::::<><>::
 Division_btn.png::CompressedTexture2D::1020324707794304315::1701103080::1701103108::1::::<><>::
